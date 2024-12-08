@@ -1,5 +1,6 @@
 import { FaShoppingCart } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -18,13 +19,15 @@ const Header = () => {
         </div>
 
         {/* Cart Button */}
-        <button className="flex items-center space-x-2 bg-white py-2 px-4 rounded-md mr-3">
-          <FaShoppingCart className="text-xl" />
-          <span className="hidden sm:inline">Cart</span>
-          <div className="flex items-center justify-center w-6 h-6 bg-[#007580] text-white text-sm rounded-full">
-            2
-          </div>
-        </button>
+        <Link href="/cart">
+          <button className="flex items-center space-x-2 bg-white py-2 px-4 rounded-md mr-3">
+            <FaShoppingCart className="text-xl" />
+            <span className="hidden sm:inline">Cart</span>
+            <div className="flex items-center justify-center w-6 h-6 bg-[#007580] text-white text-sm rounded-full">
+              2
+            </div>
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ export default function Categories() {
     {
       name: "Wing Chair",
       products: "3,584 Products",
-      image: "/05.jpg",
+      image: "/07.jpg",
       href: "/categories/wing-chair",
     },
     {
@@ -18,7 +18,7 @@ export default function Categories() {
     {
       name: "Desk Chair",
       products: "154 Products",
-      image: "/09.png",
+      image: "/04.jpg",
       href: "/categories/desk-chair",
     },
   ];

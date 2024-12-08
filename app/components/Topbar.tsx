@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 import { FaCheck, FaExclamationCircle } from "react-icons/fa";
 
@@ -18,7 +19,7 @@ const Topbar = () => {
             <span>Eng</span>
             <ChevronDown />
           </li>
-          <li className="cursor-pointer">FAQs</li>
+          <Link href="/faq"><li className="cursor-pointer">FAQs</li></Link>
           <li className="flex items-center space-x-2 cursor-pointer">
             <FaExclamationCircle className="text-white" />
             <span>Need Help</span>

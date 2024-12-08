@@ -12,32 +12,32 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-white pt-[14px] pb-[14px]">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 lg:px-0">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 lg:px-0 ml-3">
         {/* Desktop Menu (Visible above 768px, hidden on mobile) */}
         <div className="hidden md:flex gap-8 ml-3">
-          <Link href={"#"} className="text-[#007580] text-[14px] font-medium">
+          <Link href="/" className="text-[#007580] text-[14px] font-medium">
             Home
           </Link>
           <Link href={"#"} className="text-[14px] font-medium">
             Shop
           </Link>
-          <Link href={"#"} className="text-[14px] font-medium">
+          <Link href="/product" className="text-[14px] font-medium">
             Product
           </Link>
           <Link href={"#"} className="text-[14px] font-medium">
             Pages
           </Link>
-          <Link href={"#"} className="text-[14px] font-medium">
+          <Link href="/about" className="text-[14px] font-medium">
             About
           </Link>
         </div>
 
         {/* Contact Information (Visible above 768px) */}
-        <div className="hidden md:flex items-center gap-4 ml-auto">
+        <div className="hidden md:flex items-center gap-4 ml-auto mr-4">
           <span className="font-normal text-[#636270] text-[14px]">
             Contact:
           </span>
-          <span className="font-medium text-[#272343] text-[14px] ml-2">
+          <span className="font-medium text-[#272343] text-[14px] ml-1">
             (808) 555-0111
           </span>
         </div>
@@ -69,19 +69,19 @@ const Navbar = () => {
       {/* Mobile Menu Items (Visible below 768px) */}
       {isMenuOpen && (
         <div className="lg:hidden flex flex-col gap-4 mt-4 px-4">
-          <Link href={"#"} className="text-[#007580] text-[14px] font-medium">
+          <Link href="/" className="text-[#007580] text-[14px] font-medium">
             Home
           </Link>
-          <Link href={"#"} className="text-[14px] font-medium">
+          <Link href={""} className="text-[14px] font-medium">
             Shop
           </Link>
-          <Link href={"#"} className="text-[14px] font-medium">
+          <Link href="/product" className="text-[14px] font-medium">
             Product
           </Link>
           <Link href={"#"} className="text-[14px] font-medium">
             Pages
           </Link>
-          <Link href={"#"} className="text-[14px] font-medium">
+          <Link href="/about" className="text-[14px] font-medium">
             About
           </Link>
         </div>
