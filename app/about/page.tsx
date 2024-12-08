@@ -1,7 +1,6 @@
 import React from 'react'
 import AboutHero from '../components/aboutHero'
 import AboutSection from '../components/aboutSection'
-import Footer from '../components/Footer';
 import AboutPopularProduct from '../components/aboutPopularProduct';
 
 const page = () => {
@@ -10,7 +9,7 @@ const page = () => {
         <AboutHero />
             <AboutSection />
             <AboutPopularProduct />
-            <Footer />
+            
       </div>
     );
 }
