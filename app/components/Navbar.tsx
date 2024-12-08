@@ -31,9 +31,11 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden md:flex items-center gap-4 ml-auto mr-4">
-          <span className="font-normal text-[#636270] text-[14px]">
+         <Link href="/contact"> <span className="font-normal text-[#636270] text-[14px]">
             Contact:
           </span>
+            
+          </Link>
           <span className="font-medium text-[#272343] text-[14px] ml-1">
             (808) 555-0111
           </span>
