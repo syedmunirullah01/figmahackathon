@@ -1,28 +1,19 @@
 import { ChevronDown } from "lucide-react";
 import React from "react";
-import { FaCheck } from "react-icons/fa";
-import { FaExclamationCircle } from "react-icons/fa";
-// import { Inter } from "next/font/google";
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   weight: ["400"],
-// });
+import { FaCheck, FaExclamationCircle } from "react-icons/fa";
 
 const Topbar = () => {
   return (
-    <div
-      className={` w-full flex md:flex-row flex-col bg-[#272343] pt-[14px] pb-[14px] items-center justify-between h-[45px]`}
-    >
+    <div className="w-full flex flex-col sm:flex-row bg-[#272343] pt-[14px] pb-[14px] items-center justify-between h-[45px] sm:h-[50px]">
       <div className="max-w-screen-xl mx-auto container flex items-center justify-between w-full px-4">
         {/* Left Section */}
-        <p className="text-white flex items-center space-x-2 font-normal text-center md:text-left">
+        <p className="text-white flex items-center space-x-2 font-normal text-center sm:text-left xs:text-left text-[10px] sm:text-[12px] xs:text-[12px]">
           <FaCheck className="text-white" />
           <span>Free shipping on all orders over $50</span>
         </p>
 
         {/* Right Section */}
-        <ul className="text-white flex items-center space-x-6 font-normal text-center md:text-left">
+        <ul className="text-white flex items-center space-x-4 font-normal text-center sm:text-left xs:text-left text-[10px] sm:text-[12px] xs:text-[12px]">
           <li className="flex items-center space-x-1 cursor-pointer">
             <span>Eng</span>
             <ChevronDown />

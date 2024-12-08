@@ -4,7 +4,8 @@ import Image from "next/image";
 const Header = () => {
   return (
     <div className="w-full bg-[#F0F2F3] pt-[20px] pb-[20px] h-[84px]">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+        {/* Logo and Title */}
         <div className="flex items-center space-x-3">
           <Image
             src="/Vector.png"
@@ -16,9 +17,10 @@ const Header = () => {
           <h2 className="text-[26px] font-medium">Comforty</h2>
         </div>
 
-        <button className="flex items-center space-x-2 bg-white  py-2 px-4 rounded-md  mr-3">
+        {/* Cart Button */}
+        <button className="flex items-center space-x-2 bg-white py-2 px-4 rounded-md mr-3">
           <FaShoppingCart className="text-xl" />
-          <span>Cart</span>
+          <span className="hidden sm:inline">Cart</span>
           <div className="flex items-center justify-center w-6 h-6 bg-[#007580] text-white text-sm rounded-full">
             2
           </div>
