@@ -4,7 +4,6 @@ import Image from "next/image";
 const AboutHero = () => {
   return (
     <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center bg-white mt-16 md:mt-32 px-4">
-      {/* Left Section */}
       <div className="w-full md:w-[650px] h-auto md:h-[478px] bg-[#007580] p-6 flex flex-col justify-start items-start text-left text-white">
         <h1 className="text-[24px] md:text-[32px] font-bold pl-4 md:pl-6 pt-8 md:pt-12">
           About Us - Comforty
@@ -21,8 +20,6 @@ const AboutHero = () => {
           </button>
         </div>
       </div>
-
-      {/* Right Section */}
       <div className="w-full md:w-[619px] h-auto md:h-[478px] mt-6 md:mt-0 md:ml-6">
         <Image
           src="/Image Block.png"

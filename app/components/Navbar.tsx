@@ -12,8 +12,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-white pt-[14px] pb-[14px]">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 lg:px-0 ml-3">
-        {/* Desktop Menu (Visible above 768px, hidden on mobile) */}
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 lg:px-0">
         <div className="hidden md:flex gap-8 ml-3">
           <Link href="/" className="text-[#007580] text-[14px] font-medium">
             Home
@@ -31,8 +30,6 @@ const Navbar = () => {
             About
           </Link>
         </div>
-
-        {/* Contact Information (Visible above 768px) */}
         <div className="hidden md:flex items-center gap-4 ml-auto mr-4">
           <span className="font-normal text-[#636270] text-[14px]">
             Contact:
@@ -41,8 +38,6 @@ const Navbar = () => {
             (808) 555-0111
           </span>
         </div>
-
-        {/* Mobile Menu Button (Visible below 768px) */}
         <button
           className="lg:hidden flex items-center justify-center p-2"
           onClick={toggleMenu}
@@ -65,8 +60,6 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-
-      {/* Mobile Menu Items (Visible below 768px) */}
       {isMenuOpen && (
         <div className="lg:hidden flex flex-col gap-4 mt-4 px-4">
           <Link href="/" className="text-[#007580] text-[14px] font-medium">

@@ -9,23 +9,18 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600"] });
 const Page = () => {
   return (
     <div className="max-w-screen-xl mx-auto mt-24 px-4 sm:px-6">
-      {/* Heading */}
       <h1 className="font-semibold text-4xl text-center sm:text-3xl">
         Get In Touch With Us
       </h1>
 
-      {/* Description */}
       <p className="text-[16px] text-[#9F9F9F] font-normal text-center mt-[30px] sm:w-full sm:text-sm">
         For More Information About Our Product & Services. Please Feel Free To
         Drop Us An Email. Our Staff Always Be There To Help You Out. Do Not
         Hesitate!
       </p>
 
-      {/* Grid Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-[60px]">
-        {/* Left Section: Contact Info */}
         <div className="flex flex-col space-y-8 px-6 sm:px-10">
-          {/* Address */}
           <div className="flex items-start space-x-4">
             <FaMapMarkerAlt className="text-black h-[27.59px] mt-1" />
             <div>
@@ -40,7 +35,6 @@ const Page = () => {
             </div>
           </div>
 
-          {/* Phone */}
           <div className="flex items-start space-x-4">
             <FaPhone className="text-black h-[27.59px] mt-1" />
             <div>
@@ -55,7 +49,6 @@ const Page = () => {
             </div>
           </div>
 
-          {/* Working Time */}
           <div className="flex items-start space-x-4">
             <GoClockFill className="text-black h-[27.59px] mt-1" />
             <div>
@@ -72,10 +65,8 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Right Section: Contact Form */}
         <div className="bg-white p-8 w-full sm:w-[635px]">
           <form action="#" method="POST">
-            {/* Name */}
             <div className="mb-4">
               <label
                 htmlFor="name"
@@ -93,7 +84,6 @@ const Page = () => {
               />
             </div>
 
-            {/* Email */}
             <div className="mb-4 mt-8">
               <label
                 htmlFor="email"
@@ -111,7 +101,6 @@ const Page = () => {
               />
             </div>
 
-            {/* Subject */}
             <div className="mb-4 mt-8">
               <label
                 htmlFor="subject"
@@ -128,7 +117,6 @@ const Page = () => {
               />
             </div>
 
-            {/* Message */}
             <div className="mb-8 mt-8">
               <label
                 htmlFor="message"
@@ -146,7 +134,6 @@ const Page = () => {
               ></textarea>
             </div>
 
-            {/* Submit Button */}
             <div>
               <button
                 type="submit"
@@ -159,7 +146,6 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
       <ContactSection />
     </div>
   );

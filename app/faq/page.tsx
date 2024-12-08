@@ -1,4 +1,3 @@
-
 import { FaPlus } from "react-icons/fa6";
 
 export default function Faqs() {
@@ -14,10 +13,8 @@ export default function Faqs() {
           industry. Lorem Ipsum has been the
         </p>
 
-        {/* FAQ Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 mb-24">
           <div>
-            {/* FAQ Card */}
             <div className="bg-[#F7F7F7] p-6 w-full h-auto max-w-full rounded-lg mb-6 text-left">
               <h3 className="text-[18px] pt-4 font-bold flex justify-between">
                 What types of chairs do you offer?
@@ -31,7 +28,6 @@ export default function Faqs() {
               </p>
             </div>
 
-            {/* FAQ Card */}
             <div className="bg-[#F7F7F7] p-6 w-full h-auto max-w-full rounded-lg mb-6 text-left">
               <h3 className="text-[18px] pt-4 font-bold flex justify-between">
                 Do your chairs come with a warranty?
@@ -45,7 +41,6 @@ export default function Faqs() {
               </p>
             </div>
 
-            {/* FAQ Card */}
             <div className="bg-[#F7F7F7] p-6 w-full h-auto max-w-full rounded-lg mb-6 text-left">
               <h3 className="text-[18px] pt-4 font-bold flex justify-between">
                 Can I try a chair before purchasing?
@@ -61,7 +56,6 @@ export default function Faqs() {
           </div>
 
           <div>
-            {/* FAQ Card */}
             <div className="bg-[#F7F7F7] p-6 w-full h-auto max-w-full rounded-lg mb-6 text-left">
               <h3 className="text-[18px] pt-4 font-bold flex justify-between">
                 How can we get in touch with you?
@@ -75,7 +69,6 @@ export default function Faqs() {
               </p>
             </div>
 
-            {/* FAQ Card */}
             <div className="bg-[#F7F7F7] p-6 w-full h-auto max-w-full rounded-lg mb-6 text-left">
               <h3 className="text-[18px] pt-4 font-bold flex justify-between">
                 What will be delivered? And When?
@@ -89,7 +82,6 @@ export default function Faqs() {
               </p>
             </div>
 
-            {/* FAQ Card */}
             <div className="bg-[#F7F7F7] p-6 w-full h-auto max-w-full rounded-lg text-left">
               <h3 className="text-[18px] pt-4 font-bold flex justify-between">
                 How do I clean and maintain my Comforty chair?
@@ -105,8 +97,6 @@ export default function Faqs() {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 }

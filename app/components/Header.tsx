@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <div className="w-full bg-[#F0F2F3] pt-[20px] pb-[20px] h-[84px]">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
-        {/* Logo and Title */}
         <div className="flex items-center space-x-3">
           <Image
             src="/Vector.png"
@@ -17,8 +16,6 @@ const Header = () => {
           />
           <h2 className="text-[26px] font-medium">Comforty</h2>
         </div>
-
-        {/* Cart Button */}
         <Link href="/cart">
           <button className="flex items-center space-x-2 bg-white py-2 px-4 rounded-md mr-3">
             <FaShoppingCart className="text-xl" />

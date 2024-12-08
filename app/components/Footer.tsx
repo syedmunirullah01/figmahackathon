@@ -18,10 +18,11 @@ export default function Footer() {
           <div className="flex flex-col w-full  md:w-[320px] items-start">
             <div className="flex items-center gap-2">
               <Image
-                src="/img/logo/logo.png"
-                alt="logo"
+                src="/Vector.png"
+                alt="Comforty Logo"
                 width={40}
-                height={40}
+                height={23.34}
+                className="ml-3"
               />
               <span className="text-[#272343] text-[26px] font-bold">
                 Comforty
