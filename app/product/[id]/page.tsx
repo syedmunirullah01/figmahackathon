@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
+
 
 type Product = {
   id: number;
@@ -56,17 +58,42 @@ const products: Product[] = [
   },
 ];
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  const { id } = params;
-  const product = products.find((item) => item.id === Number(id));
+export default function ProductDetail({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const [productId, setProductId] = useState<string | null>(null);
+  const [product, setProduct] = useState<Product | null>(null);
+
+    console.log(productId); 
+    
+  useEffect(() => {
+    params
+      .then((resolvedParams) => {
+        setProductId(resolvedParams.id);
+        const foundProduct = products.find(
+          (item) => item.id === Number(resolvedParams.id)
+        );
+        setProduct(foundProduct || null);
+      })
+      .catch(() => {
+        setProductId(null);
+      });
+  }, [params]);
 
   if (!product) {
-    return <p>Product not found</p>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-gray-700 text-xl font-medium">Product not found</p>
+      </div>
+    );
   }
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4">
       <div className="flex max-w-4xl w-full">
+        {/* Image Section */}
         <div className="w-1/2 p-4">
           <Image
             src={product.image}
@@ -77,6 +104,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
           />
         </div>
 
+        {/* Product Details Section */}
         <div className="w-1/2 p-4">
           <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
           <button className="mt-4 mb-4 bg-[#007580] text-white font-semibold py-2 px-4 rounded">
@@ -87,7 +115,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
               Original Price: ${product.originalPrice}
             </p>
           )}
-          <p>
+          <p className="text-gray-700 mt-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
             fugiat explicabo iusto qui exercitationem distinctio, perspiciatis
             dolore provident cum eveniet error illo esse accusamus voluptatibus
