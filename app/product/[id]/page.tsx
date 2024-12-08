@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-
 type Product = {
   id: number;
   title: string;
@@ -65,21 +64,24 @@ export default function ProductDetail({
 }) {
   const [productId, setProductId] = useState<string | null>(null);
   const [product, setProduct] = useState<Product | null>(null);
-
-    console.log(productId); 
-    
+   console.log(productId)
   useEffect(() => {
-    params
-      .then((resolvedParams) => {
+    const unwrapParams = async () => {
+      try {
+        const resolvedParams = await params;
         setProductId(resolvedParams.id);
+
         const foundProduct = products.find(
           (item) => item.id === Number(resolvedParams.id)
         );
         setProduct(foundProduct || null);
-      })
-      .catch(() => {
+      } catch (error) {
+        console.error("Error fetching product:", error);
         setProductId(null);
-      });
+      }
+    };
+
+    unwrapParams();
   }, [params]);
 
   if (!product) {
