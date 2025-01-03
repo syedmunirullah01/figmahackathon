@@ -25,7 +25,7 @@ export default function Categories() {
 
   return (
     <section className="w-full px-4 py-[7rem] md:px-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="max-w-screen-lg mx-auto ">
         <h2 className="text-3xl font-bold tracking-tight  mb-8">
           Top Categories
         </h2>

@@ -1,29 +1,40 @@
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import React from "react";
-import { FaCheck, FaExclamationCircle } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa6";
+import { IoAlertCircleOutline } from "react-icons/io5";
+import { ChevronDown } from "lucide-react";
 
 const Topbar = () => {
   return (
-    <div className="w-full flex flex-col sm:flex-row bg-[#272343] pt-[14px] pb-[14px] items-center justify-between h-[45px] sm:h-[50px]">
-      <div className="max-w-screen-xl mx-auto container flex items-center justify-between w-full px-4">
-        <p className="text-white flex items-center space-x-2 font-normal text-center sm:text-left xs:text-left text-[10px] sm:text-[12px] xs:text-[12px]">
-          <FaCheck className="text-white" />
-          <span>Free shipping on all orders over $50</span>
-        </p>
-        <ul className="text-white flex items-center space-x-4 font-normal text-center sm:text-left xs:text-left text-[10px] sm:text-[12px] xs:text-[12px]">
-          <li className="flex items-center space-x-1 cursor-pointer">
+    <div className="bg-[#272343] text-[#ffffff]/70 text-[0.5rem] sm:text-xs xl:text-[13px] lg:px-20 sm:px-10 px-3 py-2 lg:py-[14px]">
+      <div className="flex justify-between">
+        
+        <div className="flex gap-2 items-center">
+          <span>
+            <FaCheck />
+          </span>
+          <span>Free Shipping On All Orders Over $50</span>
+        </div>
+
+        <div className="flex items-center gap-2 xl:gap-6">
+          
+          <div className="flex items-center gap-1 cursor-pointer">
             <span>Eng</span>
             <ChevronDown />
-          </li>
-          <Link href="/faq">
-            <li className="cursor-pointer">FAQs</li>
+          </div>
+
+          
+          <Link href="/faq" className="hover:text-[#ffffff]">
+            FAQs
           </Link>
-          <li className="flex items-center space-x-2 cursor-pointer">
-            <FaExclamationCircle className="text-white" />
+
+          
+          <div className="flex items-center gap-[6px] cursor-pointer">
+            <span>
+              <IoAlertCircleOutline />
+            </span>
             <span>Need Help</span>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

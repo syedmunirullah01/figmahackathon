@@ -71,7 +71,7 @@ export default function OurProduct() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-20">
+    <div className="max-w-screen-lg mx-auto px-4 py-20">
       <h1 className="text-3xl text-center font-semibold text-[#1C1B1F] tracking-tight  mb-8">
         {" "}
         Our Products

@@ -8,7 +8,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600"] });
 
 const ContactSection = () => {
   return (
-    <div className="w-full max-w-screen-xl h-auto bg-[#F4F4F4] flex flex-wrap items-center justify-between px-8 py-6">
+    <div className=" max-w-screen-lg mx-auto bg-[#F4F4F4] flex flex-wrap items-center justify-between px-8 py-6 overflow-x-hidden">
       <div className="flex items-center space-x-4 mb-6 sm:mb-0">
         <BsTrophy className="w-[52.77px] h-[60px] text-black" />
         <div>

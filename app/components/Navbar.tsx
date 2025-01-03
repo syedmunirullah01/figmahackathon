@@ -1,9 +1,10 @@
 "use client";
-
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const Navbar = () => {
+  const currentPath = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,38 +12,74 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white pt-[14px] pb-[14px]">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 lg:px-0">
-        <div className="hidden md:flex gap-8 ml-3">
-          <Link href="/" className="text-[#007580] text-[14px] font-medium">
-            Home
-          </Link>
-          <Link href="/product" className="text-[14px] font-medium">
-            Shop
-          </Link>
-          <Link href="/product" className="text-[14px] font-medium">
-            Product
-          </Link>
-          <Link href="/faq" className="text-[14px] font-medium">
-            Pages
-          </Link>
-          <Link href="/about" className="text-[14px] font-medium">
-            About
-          </Link>
+    <div className="bg-white">
+      {/* Desktop Navbar */}
+      <div className="lg:py-8 md:px-10 py-4 lg:px-20 md:block hidden">
+        <div className="text-[#636270] flex justify-between font-medium text-[14px]">
+          <nav className="space-x-8">
+            <Link
+              href="/"
+              className={`hover:text-[#007580] ${
+                currentPath === "/" ? "text-[#007580]" : ""
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/product"
+              className={`hover:text-[#007580] ${
+                currentPath === "/product" ? "text-[#007580]" : ""
+              }`}
+            >
+              Shop
+            </Link>
+            <Link
+              href="/product"
+              className={`hover:text-[#007580] ${
+                currentPath === "/products" ? "text-[#007580]" : ""
+              }`}
+            >
+              Product
+            </Link>
+            <Link
+              href="/pages"
+              className={`hover:text-[#007580] ${
+                currentPath === "/pages" ? "text-[#007580]" : ""
+              }`}
+            >
+              Pages
+            </Link>
+            <Link
+              href="/about"
+              className={`hover:text-[#007580] ${
+                currentPath === "/about" ? "text-[#007580]" : ""
+              }`}
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className={`hover:text-[#007580] ${
+                currentPath === "/contact" ? "text-[#007580]" : ""
+              }`}
+            >
+              Contact
+            </Link>
+          </nav>
+          <div>
+            <p>
+              Contact:{" "}
+              <span className="ml-2 text-[#272343]">(808) 555-0111</span>
+            </p>
+          </div>
         </div>
-        <div className="hidden md:flex items-center gap-4 ml-auto mr-4">
-         <Link href="/contact"> <span className="font-normal text-[#636270] text-[14px]">
-            Contact:
-          </span>
-            
-          </Link>
-          <span className="font-medium text-[#272343] text-[14px] ml-1">
-            (808) 555-0111
-          </span>
-        </div>
+      </div>
+
+      {/* Mobile Navbar */}
+      <div className="md:hidden flex justify-between items-center py-4 px-4 bg-white">
         <button
-          className="lg:hidden flex items-center justify-center p-2"
           onClick={toggleMenu}
+          className="p-2 focus:outline-none focus:ring-2 focus:ring-[#007580]"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +91,7 @@ const Navbar = () => {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
+              strokeWidth={2}
               d={
                 isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
               }
@@ -62,26 +99,61 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+
+     
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col gap-4 mt-4 px-4">
-          <Link href="/" className="text-[#007580] text-[14px] font-medium">
+        <div className="md:hidden flex flex-col items-start bg-white px-4 py-4">
+          <Link
+            href="/"
+            className={`block py-2 hover:text-[#007580] ${
+              currentPath === "/" ? "text-[#007580]" : ""
+            }`}
+          >
             Home
           </Link>
-          <Link href="/product" className="text-[14px] font-medium">
+          <Link
+            href="/product"
+            className={`block py-2 hover:text-[#007580] ${
+              currentPath === "/product" ? "text-[#007580]" : ""
+            }`}
+          >
             Shop
           </Link>
-          <Link href="/product" className="text-[14px] font-medium">
+          <Link
+            href="/product"
+            className={`block py-2 hover:text-[#007580] ${
+              currentPath === "/products" ? "text-[#007580]" : ""
+            }`}
+          >
             Product
           </Link>
-          <Link href="/faq" className="text-[14px] font-medium">
+          <Link
+            href="/pages"
+            className={`block py-2 hover:text-[#007580] ${
+              currentPath === "/pages" ? "text-[#007580]" : ""
+            }`}
+          >
             Pages
           </Link>
-          <Link href="/about" className="text-[14px] font-medium">
+          <Link
+            href="/about"
+            className={`block py-2 hover:text-[#007580] ${
+              currentPath === "/about" ? "text-[#007580]" : ""
+            }`}
+          >
             About
+          </Link>
+          <Link
+            href="/contact"
+            className={`block py-2 hover:text-[#007580] ${
+              currentPath === "/contact" ? "text-[#007580]" : ""
+            }`}
+          >
+            Contact
           </Link>
         </div>
       )}
-    </nav>
+    </div>
   );
 };
 

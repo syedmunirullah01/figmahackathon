@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutPopularProduct = () => {
   return (
-    <div className="max-w-screen-xl mx-auto mt-32 px-6">
+    <div className="max-w-screen-lg mx-auto mt-32 px-6">
       <h2 className="text-[32px] font-semibold text-left mb-12">
         Our Popular Products
       </h2>

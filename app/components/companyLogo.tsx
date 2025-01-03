@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const CompanyLogo = () => {
   return (
-    <div className="w-full flex flex-wrap justify-center items-center gap-20 pt-14 px-4">
+    <div className="w-full max-w-screen-xl mx-auto flex flex-wrap justify-center items-center gap-16 pt-14 px-4">
       <div className="flex justify-center items-center">
         <Image src="/Logo (3).png" alt="Zaphier Logo" width={85} height={87} />
       </div>

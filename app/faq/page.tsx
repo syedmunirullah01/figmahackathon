@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa6";
 export default function Faqs() {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto mt-16 text-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-lg mx-auto mt-16 text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-[48px] text-[#333333] font-bold mb-4">
           Questions Looks Here
         </h1>

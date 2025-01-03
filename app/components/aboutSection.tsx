@@ -6,7 +6,7 @@ import { BiSolidLeaf } from "react-icons/bi";
 
 const AboutSection = () => {
   return (
-    <div className="max-w-screen-xl mx-auto mt-32 px-6">
+    <div className="max-w-screen-lg mx-auto mt-32 px-6">
       <h2 className="text-[32px] font-semibold text-center mb-12">
         What makes our Brand Different
       </h2>

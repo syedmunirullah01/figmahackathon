@@ -3,19 +3,19 @@ import Image from "next/image";
 
 const AboutHero = () => {
   return (
-    <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center bg-white mt-16 md:mt-32 px-4">
+    <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center bg-white mt-16 md:mt-32 px-4">
       <div className="w-full md:w-[650px] h-auto md:h-[478px] bg-[#007580] p-6 flex flex-col justify-start items-start text-left text-white">
         <h1 className="text-[24px] md:text-[32px] font-bold pl-4 md:pl-6 pt-8 md:pt-12">
           About Us - Comforty
         </h1>
-        <p className="text-[16px] md:text-[18px] font-normal pt-4 pl-4 md:pl-6 pb-12 md:pb-40">
+        <p className="text-[16px] md:text-[18px] font-normal pt-4 pl-4 md:pl-6  pb-12 md:pb-20">
           At Comforty, we believe that the right chair can transform your space
           and elevate your comfort. Specializing in ergonomic design, premium
           materials, and modern aesthetics, we craft chairs that seamlessly
           blend style with functionality.
         </p>
         <div className="pl-4 md:pl-6">
-          <button className="bg-[#2e6a6d] text-white px-6 md:px-8 py-3 md:py-4 text-[14px] md:text-[16px] font-normal">
+          <button className="bg-[#2e6a6d] text-white px-6 md:px-8 py-3 md:py-4 text-[14px] md:text-[16px] font-normal ">
             View collection
           </button>
         </div>
