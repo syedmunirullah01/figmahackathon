@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -7,14 +7,16 @@ import Link from "next/link";
 import { client } from "../../sanity/lib/client"; // Adjust the import path as needed
 
 type Product = {
-  id: number;
+  id: string; // Using string for IDs as Sanity returns strings for _id
   title: string;
-  image: string;
+  image: string; // Image will be a string (URL)
   originalPrice?: number;
   discountedPrice?: number;
   isNew?: boolean;
   isSale?: boolean;
 };
+
+
 
 const ProductCard = ({ product }: { product: Product }) => (
   <div key={product.id} className="group relative rounded-lg bg-white">
@@ -44,16 +46,18 @@ const ProductCard = ({ product }: { product: Product }) => (
       <div>
         <h3 className="text-sm text-[#1C1B1F]">{product.title}</h3>
         <div className="mt-1 flex items-center gap-2">
-          {/* Show discounted price if available */}
           {product.discountedPrice && (
             <span className="text-lg font-medium text-[#1C1B1F]">
               ${product.discountedPrice}
             </span>
           )}
-          {/* Always show original price */}
           {product.originalPrice && (
             <span
-              className={`text-sm ${product.discountedPrice ? "text-gray-500 line-through" : "text-[#1C1B1F]"}`}
+              className={`text-sm ${
+                product.discountedPrice
+                  ? "text-gray-500 line-through"
+                  : "text-[#1C1B1F]"
+              }`}
             >
               ${product.originalPrice}
             </span>
@@ -74,43 +78,49 @@ export default function AllProduct() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [searchTerm, setSearchTerm] = useState(""); // State for search input
-  const [sortOption, setSortOption] = useState("none"); // State for sort option
+  const [searchTerm, setSearchTerm] = useState(""); // Search term state
+  const [sortOption, setSortOption] = useState("none"); // Sorting state
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8; // Adjust the number of items per page
+  const itemsPerPage = 8; // Items per page
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const query = `*[_type == "products"] {
-          _id,
-          title,
-          price,
-          "image": image.asset->url,
-          originalPrice,
-          discountedPrice,
-          isNew,
-          isSale
-        }`;
+        _id,
+        title,
+        originalPrice,
+        discountedPrice,
+        "image": image.asset->url,  // Fetch URL from Sanity directly
+        isNew,
+        isSale
+      }`;
 
-        const data = await client.fetch(query);
+        const data: {
+          _id: string;
+          title: string;
+          originalPrice?: number;
+          discountedPrice?: number;
+          image: string;
+          isNew?: boolean;
+          isSale?: boolean;
+        }[] = await client.fetch(query);
         console.log("Fetched products:", data);
 
-        // Map Sanity data to your Product type
-        const formattedProducts = data.map((product: any) => ({
-          id: product._id,
+        const formattedProducts = data.map((product) => ({
+          id: product._id, // Use _id from Sanity
           title: product.title,
           originalPrice: product.originalPrice,
           discountedPrice: product.discountedPrice,
-          image: product.image,
+          image: product.image, // This is already the URL string
           isNew: product.isNew,
           isSale: product.isSale,
         }));
 
-        setProducts(formattedProducts);
+        setProducts(formattedProducts); // Set state to properly typed Product[]
       } catch (err) {
         console.error("Error fetching products:", err);
         setError("Failed to fetch products. Please try again later.");
@@ -122,7 +132,8 @@ export default function AllProduct() {
     fetchProducts();
   }, []);
 
-  // Filter products based on search term
+
+  // Filter products based on the search term
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -186,7 +197,7 @@ export default function AllProduct() {
         <select
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
-          className="p-3 border border-[#00A294] rounded-lg hidden md:block "
+          className="p-3 border border-[#00A294] rounded-lg hidden md:block"
         >
           <option value="none">Sort By</option>
           <option value="lowToHigh">Price: Low to High</option>
