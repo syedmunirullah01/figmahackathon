@@ -28,23 +28,15 @@ const Navbar = () => {
             <Link
               href="/product"
               className={`hover:text-[#007580] ${
-                currentPath === "/product" ? "text-[#007580]" : ""
-              }`}
-            >
-              Shop
-            </Link>
-            <Link
-              href="/product"
-              className={`hover:text-[#007580] ${
                 currentPath === "/products" ? "text-[#007580]" : ""
               }`}
             >
               Product
             </Link>
             <Link
-              href="/pages"
+              href="/faq"
               className={`hover:text-[#007580] ${
-                currentPath === "/pages" ? "text-[#007580]" : ""
+                currentPath === "/faq" ? "text-[#007580]" : ""
               }`}
             >
               Pages
@@ -100,7 +92,6 @@ const Navbar = () => {
         </button>
       </div>
 
-     
       {isMenuOpen && (
         <div className="md:hidden flex flex-col items-start bg-white px-4 py-4">
           <Link
@@ -114,23 +105,15 @@ const Navbar = () => {
           <Link
             href="/product"
             className={`block py-2 hover:text-[#007580] ${
-              currentPath === "/product" ? "text-[#007580]" : ""
-            }`}
-          >
-            Shop
-          </Link>
-          <Link
-            href="/product"
-            className={`block py-2 hover:text-[#007580] ${
               currentPath === "/products" ? "text-[#007580]" : ""
             }`}
           >
             Product
           </Link>
           <Link
-            href="/pages"
+            href="/faq"
             className={`block py-2 hover:text-[#007580] ${
-              currentPath === "/pages" ? "text-[#007580]" : ""
+              currentPath === "/faqs" ? "text-[#007580]" : ""
             }`}
           >
             Pages

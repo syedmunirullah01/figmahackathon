@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css"; 
+import "./globals.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Topbar from "./components/Topbar";
+import { CartProvider } from "../context/CartContext"; // Import CartProvider
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,12 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <Topbar />
-        <Header />
-        <Navbar />
-
-        {children}
-        <Footer />
+        <CartProvider>
+          {" "}
+          {/* Wrap everything with CartProvider */}
+          <Topbar />
+          <Header />
+          <Navbar />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
