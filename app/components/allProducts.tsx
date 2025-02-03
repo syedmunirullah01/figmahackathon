@@ -16,8 +16,6 @@ type Product = {
   isSale?: boolean;
 };
 
-
-
 const ProductCard = ({ product }: { product: Product }) => (
   <div key={product.id} className="group relative rounded-lg bg-white">
     <div className="relative aspect-square overflow-hidden rounded-lg">
@@ -90,14 +88,14 @@ export default function AllProduct() {
     const fetchProducts = async () => {
       try {
         const query = `*[_type == "products"] {
-        _id,
-        title,
-        originalPrice,
-        discountedPrice,
-        "image": image.asset->url,  // Fetch URL from Sanity directly
-        isNew,
-        isSale
-      }`;
+          _id,
+          title,
+          originalPrice,
+          discountedPrice,
+          "image": image.asset->url,  // Fetch URL from Sanity directly
+          isNew,
+          isSale
+        }`;
 
         const data: {
           _id: string;
@@ -131,7 +129,6 @@ export default function AllProduct() {
 
     fetchProducts();
   }, []);
-
 
   // Filter products based on the search term
   const filteredProducts = products.filter((product) =>
